@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Complaints</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Complaints</h1>
+        <a class="button" th:href="@{/}">Create new complaint</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="c : ${complaints}">
+                    <td th:text="${c.name}">Name</td>
+                    <td th:text="${c.department}">Department</td>
+                    <td th:text="${c.category}">Category</td>
+                    <td th:text="${c.description}">Description</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
